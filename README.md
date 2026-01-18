@@ -1,7 +1,6 @@
 <!-- 
 
-1. edit .env
-2. buat model & migrasi Category, Brand, Store, BrandCategory, Product, ProductPhoto, Transaction
+1. edit model Category, Brand, BrandCategory, Product, Transaction
 
  -->
 

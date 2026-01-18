@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
@@ -15,4 +16,14 @@ class Transaction extends Model
         'started_at' => 'date', // Mengubah string/datetime dari database menjadi Carbon instance
         'ended_at' => 'date', // Mengubah string/datetime dari database menjadi Carbon instance
     ];
+    
+    public function stores(): BelongsTo
+    {
+        return $this->belongsTo(Store::class);
+    }
+
+    public function products(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
