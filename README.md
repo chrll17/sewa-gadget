@@ -1,7 +1,6 @@
 <!-- 
 
-1. buat cast "php artisan make:cast MoneyCast"
-2. edit model Transaction, Product
+1. edit model Transaction, Category, Product, Brand, Store
 
  -->
 

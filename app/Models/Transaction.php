@@ -18,6 +18,15 @@ class Transaction extends Model
         'started_at' => 'date', // Mengubah string/datetime dari database menjadi Carbon instance
         'ended_at' => 'date', // Mengubah string/datetime dari database menjadi Carbon instance
     ];
+
+    public static function generateUniqueIdTrx()
+    {
+        $prefix = 'SEWA';
+        do{
+            $randomString = $prefix . mt_rand(1000,9999);
+        }while(self::where('id_trx', $randomString)->exists());
+        return $randomString;
+    }
     
     public function stores(): BelongsTo
     {
