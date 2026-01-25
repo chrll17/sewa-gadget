@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\MoneyCast;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -12,6 +13,10 @@ class Product extends Model
     use SoftDeletes;
 
     protected $fillable = ['name','slug','thumbnail','about','id_categories','id_brands','price'];
+
+    protected $casts = [
+        'price' => MoneyCast::class
+    ];
 
     /**
      * RELASI: products ke categories

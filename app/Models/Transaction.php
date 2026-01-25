@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\MoneyCast;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,6 +14,7 @@ class Transaction extends Model
     protected $fillable = ['name','id_trx','proof','phone_number','address','total_amount','id_products','id_stores','duration','is_paid','delivery_type','started_at','ended_at'];
 
     protected $casts = [
+        'total_amount' => MoneyCast::class,
         'started_at' => 'date', // Mengubah string/datetime dari database menjadi Carbon instance
         'ended_at' => 'date', // Mengubah string/datetime dari database menjadi Carbon instance
     ];
