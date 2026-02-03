@@ -1,6 +1,11 @@
 <!-- 
 
-1. edit model Transaction, Category, Product, Brand, Store
+1. install laravel filament -> buka dokumentasi filament bagian installation -> 'composer require filament/filament:"^5.0"' -> 'php artisan filament:install --panels' -> admin -> no
+2. jika ingin melihat hasilnya masuk ke /admin/login
+3. buat user untuk login 'php artisan make:filament-user'
+4. buat resource category 'php artisan make:filament-resource Category'
+5. edit CategoryForm.php & CategoriesTable.php
+6. hubungkan folder storage 'php artisan storage:link'
 
  -->
 
